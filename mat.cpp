@@ -3,6 +3,8 @@ using namespace std;
 #include <stdexcept>
 #include "mat.hpp"
 #include <vector>
+const int A=33;
+const int B=126;
 namespace ariel {
     vector<vector<char>> drowCols(vector<vector<char>> matrix, char c){
         int count=0;
@@ -58,6 +60,10 @@ namespace ariel {
         }
         if(a<0 || b<0){
             throw std::invalid_argument("a and b must be greater then 0");
+        }
+        if((c<A || d>B)||(c>B || d<A)){
+            throw std::invalid_argument("c and d must be between 33-126");
+
         }
         std::string result;
         vector<vector<char>> matrix(b);
